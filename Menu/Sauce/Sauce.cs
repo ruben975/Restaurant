@@ -8,9 +8,7 @@ namespace Restaurant.Menu.Sauce
 {
     public abstract class Sauce : Product
     {
-        public int Price { get; set; }
-        public string Description { get; set; }
-        public double VAT { get; set; }
+        
         public SauceType Type { get; set; }
 
         protected Sauce(SauceType type)

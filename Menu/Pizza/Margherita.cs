@@ -13,6 +13,7 @@ namespace Restaurant.Menu.Pizza
         public Margherita()
             : base(PizzaType.Margherita)
         {
+            Type = PizzaType.Margherita;
         }
         protected override void AddDescription()
         {

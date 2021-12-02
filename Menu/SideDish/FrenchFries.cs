@@ -11,6 +11,7 @@ namespace Restaurant.Menu.SideDish
         public FrenchFries()
               : base(SideDishType.FrenchFries)
         {
+            Type = SideDishType.FrenchFries;
         }
 
         protected override void AddDescription()

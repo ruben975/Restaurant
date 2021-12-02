@@ -12,6 +12,7 @@ namespace Restaurant.Menu.Pasta
         public SeaFood()
               : base(PastaType.SeaFood)
         {
+            Type = PastaType.SeaFood;
         }
         protected override void AddDescription()
         {

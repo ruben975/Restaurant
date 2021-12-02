@@ -10,7 +10,9 @@ namespace Restaurant.Menu.SideDish
     {
         public Rice()
               :base(SideDishType.Rice) 
-                   { }
+                   {
+            Type = SideDishType.Rice;
+        }
 
         protected override void AddDescription()
         {

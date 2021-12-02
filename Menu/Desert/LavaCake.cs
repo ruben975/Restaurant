@@ -11,6 +11,7 @@ namespace Restaurant.Menu.Desert
         public LavaCake()
             : base(DesertType.LavaCake)
         {
+            Type = DesertType.LavaCake;
         }
         protected override void AddDescription()
         {

@@ -11,6 +11,7 @@ namespace Restaurant.Menu.Desert
         public IceCream()
             : base(DesertType.IceCream)
         {
+            Type = DesertType.IceCream;
         }
         protected override void AddDescription()
         {

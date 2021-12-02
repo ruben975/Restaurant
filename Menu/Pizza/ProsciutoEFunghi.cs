@@ -13,6 +13,7 @@ namespace Restaurant.Menu.Pizza
         public ProsciutoEFunghi()
             : base(PizzaType.ProsciutoEFunghi)
         {
+            Type = PizzaType.ProsciutoEFunghi;
         }
         protected override void AddDescription()
         {

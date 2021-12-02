@@ -11,6 +11,7 @@ namespace Restaurant.Menu.Sauce
         public Ketchup()
               : base(SauceType.Ketchup)
         {
+            Type = SauceType.Ketchup;
         }
 
         protected override void AddPrice()

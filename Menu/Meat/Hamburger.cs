@@ -4,23 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Restaurant.Menu.Pasta
+namespace Restaurant.Menu.Meat
 {
-    public class Gnochi : Pasta
-    {
-        public Gnochi()
-              : base(PastaType.Gnochi)
+    public class Hamburger : Meat
+    {   public Hamburger()
+            : base(MeatType.Hamburger)
         {
-            Type = PastaType.Gnochi;
+            Type = MeatType.Hamburger;
         }
         protected override void AddDescription()
         {
-            Description = "cartofi,ou,parmezan";
+            Description = "asdas";
         }
 
         protected override void AddPrice()
         {
-            Price = 30; VAT = (Price * VAT) / 100;
+            Price = 40;
         }
+
+     
     }
 }

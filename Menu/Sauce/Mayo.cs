@@ -11,6 +11,7 @@ namespace Restaurant.Menu.Sauce
         public Mayo()
               : base(SauceType.Mayo)
         {
+            Type = SauceType.Mayo;
         }
 
         protected override void AddPrice()

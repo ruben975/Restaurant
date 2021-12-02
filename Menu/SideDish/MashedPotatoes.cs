@@ -10,7 +10,7 @@ namespace Restaurant.Menu.SideDish
     {
         public MashedPotatoes()
               : base(SideDishType.MashedPotatoes)
-        { }
+        { Type = SideDishType.MashedPotatoes; }
 
         protected override void AddDescription()
         {

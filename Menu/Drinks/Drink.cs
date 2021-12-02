@@ -8,9 +8,7 @@ namespace Restaurant.Menu.Drinks
 {
     public abstract class Drink : Product
     {
-        public int Price { get; set; }
-        public string Description { get; set; }
-        public double VAT { get; set; }
+       
         public DrinkType Type { get; set; }
 
         protected Drink(DrinkType type)

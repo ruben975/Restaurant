@@ -9,12 +9,7 @@ namespace Restaurant.Menu.Pizza
 {
    public abstract class Pizza : Product
     {
-        public int Price { get; set; }
-        public string Description { get; set; }
         
-        public string Name { get; set; }
-
-        public double VAT { get; set; }
         public PizzaType Type { get; set; }
        
     protected Pizza(PizzaType type)

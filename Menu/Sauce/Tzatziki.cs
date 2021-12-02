@@ -11,6 +11,7 @@ namespace Restaurant.Menu.Sauce
         public Tzatziki()
               : base(SauceType.Tzatziki)
         {
+            Type = SauceType.Tzatziki;
         }
 
         protected override void AddPrice()

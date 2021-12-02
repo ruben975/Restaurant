@@ -13,6 +13,7 @@ namespace Restaurant.Menu.Pizza
         public QuattroStagioni()
             : base(PizzaType.QuattroStagioni)
         {
+            Type = PizzaType.QuattroStagioni;
         }
         protected override void AddDescription()
         {

@@ -13,6 +13,7 @@ namespace Restaurant.Menu.Pasta
         public QuattroFormaggi()
               : base(PastaType.QuattroFormaggi)
         {
+            Type = PastaType.QuattroFormaggi;
         }
         protected override void AddDescription()
         {

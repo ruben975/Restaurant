@@ -14,15 +14,35 @@ namespace Restaurant
    public class ListMenu
     {
         List<Product> menu = new List<Product>();
-        public List<Product>  GetMenu()
-        {
-           
-            Desert desert = DesertFactory.MakeDesert(DesertType.LavaCake);
-            Pizza pizza = PizzaFactory.MakePizza(PizzaType.Capricoasa);
 
-            menu.Add(desert); 
-            menu.Add(pizza);
-            
+        public List<Product>  GetMenu()
+        {   //PIZZA
+            menu.Add(PizzaFactory.MakePizza(PizzaType.Capricoasa));
+            menu.Add(PizzaFactory.MakePizza(PizzaType.Margherita));
+            menu.Add(PizzaFactory.MakePizza(PizzaType.QuattroStagioni));
+            menu.Add(PizzaFactory.MakePizza(PizzaType.ProsciutoEFunghi));
+
+            //PASTA
+            menu.Add(PastaFactory.MakePasta(PastaType.Carbonara));
+            menu.Add(PastaFactory.MakePasta(PastaType.Gnochi));
+            menu.Add(PastaFactory.MakePasta(PastaType.QuattroFormaggi));
+            menu.Add(PastaFactory.MakePasta(PastaType.SeaFood));
+
+            //SAUCE
+            menu.Add(SauceFactory.MakeSauce(SauceType.Ketchup));
+            menu.Add(SauceFactory.MakeSauce(SauceType.Mayo));
+            menu.Add(SauceFactory.MakeSauce(SauceType.Tzatziki));
+
+            //Side Dish 
+            menu.Add(SideDishFactory.MakeSideDish(SideDishType.FrenchFries));
+            menu.Add(SideDishFactory.MakeSideDish(SideDishType.MashedPotatoes));
+            menu.Add(SideDishFactory.MakeSideDish(SideDishType.Rice));
+
+            //DESERT
+            menu.Add(DesertFactory.MakeDesert(DesertType.IceCream));
+            menu.Add(DesertFactory.MakeDesert(DesertType.LavaCake));
+
+
             return menu;
         }
 

@@ -11,6 +11,7 @@ namespace Restaurant.Menu.Pasta
         public Carbonara()
               : base(PastaType.Carbonara)
         {
+            Type = PastaType.Carbonara;
         }
         protected override void AddDescription()
         {

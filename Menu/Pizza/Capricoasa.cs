@@ -13,6 +13,7 @@ namespace Restaurant.Menu.Pizza
         public Capricoasa()
             : base(PizzaType.Capricoasa)
         {
+            Type = PizzaType.Capricoasa;
         }
         protected override void AddDescription()
         {
