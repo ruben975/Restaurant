@@ -8,9 +8,7 @@ namespace Restaurant.Menu.Desert
 {
     public abstract class Desert : Product
     {
-        public int Price { get; set; }
-        public string Description { get; set; }
-        public double VAT { get; set; }
+       
         public DesertType Type { get; set; }
 
         protected Desert(DesertType type)

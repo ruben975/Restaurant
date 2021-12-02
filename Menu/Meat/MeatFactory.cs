@@ -12,14 +12,14 @@ namespace Restaurant.Menu.Meat
         {
             switch (type)
             {
-               /*  case MeatType.Chicken:
+               case MeatType.Chicken:
                     return new Chicken();
                 case MeatType.Duck:
-                    return new Duck(); */
+                    return new Duck(); 
                 case MeatType.Hamburger:
                     return new Hamburger();
-               /* case MeatType.Steak:
-                    return new Steak(); */
+                case MeatType.Steak:
+                    return new Steak(); 
                 default:
                     return null;
             }

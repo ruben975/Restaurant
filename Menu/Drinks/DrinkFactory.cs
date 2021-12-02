@@ -16,10 +16,10 @@ namespace Restaurant.Menu.Drinks
                     return new Water();
                 case DrinkType.Cola:
                     return new Cola();
-               /* case DrinkType.Lemonade:
+               case DrinkType.Lemonade:
                     return new Lemonade();
                 case DrinkType.Fresh:
-                    return new Fresh(); */
+                    return new Fresh(); 
                 default:
                     return null;
             }

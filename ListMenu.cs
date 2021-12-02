@@ -6,6 +6,7 @@ using Restaurant.Menu.Drinks;
 using Restaurant.Menu.Pizza;
 using Restaurant.Menu.Sauce;
 using Restaurant.Menu.SideDish;
+using Restaurant.Menu.Meat;
 
 
 
@@ -15,12 +16,22 @@ namespace Restaurant
     {
         List<Product> menu = new List<Product>();
 
+
+
         public List<Product>  GetMenu()
         {   //PIZZA
             menu.Add(PizzaFactory.MakePizza(PizzaType.Capricoasa));
             menu.Add(PizzaFactory.MakePizza(PizzaType.Margherita));
             menu.Add(PizzaFactory.MakePizza(PizzaType.QuattroStagioni));
             menu.Add(PizzaFactory.MakePizza(PizzaType.ProsciutoEFunghi));
+
+
+
+            //MEAT 
+            menu.Add(MeatFactory.MakeMeat(MeatType.Hamburger).RemoveSideDish());
+            menu.Add(MeatFactory.MakeMeat(MeatType.Chicken).RemoveSideDish());
+            menu.Add(MeatFactory.MakeMeat(MeatType.Duck).RemoveSideDish());
+            menu.Add(MeatFactory.MakeMeat(MeatType.Steak).RemoveSideDish());
 
             //PASTA
             menu.Add(PastaFactory.MakePasta(PastaType.Carbonara));

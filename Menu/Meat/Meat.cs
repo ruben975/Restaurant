@@ -8,23 +8,40 @@ namespace Restaurant.Menu.Meat
 {
     public abstract class Meat : Product
     { 
-
+        
         public MeatType Type { get; set; }
-        public SideDish.SideDishType SideDishType { get; set; }
-
+        public SideDish.SideDish SideDishType{ get; set; } = SideDish.SideDishFactory.MakeSideDish(SideDish.SideDishType.FrenchFries);
+        public CookType CookType { get; set; } = CookType.rareCooked;
+        
         protected Meat(MeatType type)
         {
-            SideDishType = SideDish.SideDishType.FrenchFries;
+            Price = SideDishType.Price;
             this.VAT = 9;
             AddDescription();
             AddPrice();
         }
 
-        public Meat changeSideDish(SideDish.SideDishType sideDishType)
+        public Meat ChangeCookType(CookType cookType)
         {
-            SideDishType = sideDishType;
+            CookType = cookType;
 
+            return this;
+        }
+
+        public Meat changeSideDish(SideDish.SideDish sideDishType)
+        {
+            Price = Price - SideDishType.Price;
+            SideDishType = sideDishType;
+            Price = Price + sideDishType.Price;
+            AddDescription();
             return this; 
+        }
+
+        public Meat RemoveSideDish() {
+            Price = Price - SideDishType.Price;
+            SideDishType = null;
+            AddDescription();
+            return this;
         }
 
         protected abstract void AddDescription();
@@ -32,10 +49,20 @@ namespace Restaurant.Menu.Meat
        
         public override string ToString()
         {
-            return $"{Type} ({Description} ) PRET: {Price} RON ";
+          
+                return $"{Type} ({Description}) PRET: {Price} RON ";
+            
+
         }
     }
 
 
+}
+
+public enum CookType
+{
+    rareCooked, 
+    mediumCooked,
+    wellCooked
 }
 

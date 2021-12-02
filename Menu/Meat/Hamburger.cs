@@ -13,13 +13,16 @@ namespace Restaurant.Menu.Meat
             Type = MeatType.Hamburger;
         }
         protected override void AddDescription()
-        {
-            Description = "asdas";
+        {   
+            if(SideDishType != null)
+            Description = $"{SideDishType.GetType().Name}({SideDishType.Price} RON), carne de porc({CookType}), salata ";
+            else
+                Description = $" carne de vaca({CookType}), salata ";
         }
 
         protected override void AddPrice()
         {
-            Price = 40;
+            Price += 15;
         }
 
      
