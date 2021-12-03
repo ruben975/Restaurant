@@ -52,17 +52,10 @@ namespace Restaurant
             Product prod = DrinkFactory.MakeDrink(DrinkType.Cola);
             Cart cart = new Cart();
             cart.addProduct(prod);
-            cart.addProduct(pasta);
-            cart.addProduct(pasta);
-            
-            cart.addProduct(prod);
-            cart.addProduct(prod);
-            cart.addProduct(meat1);
-            cart.addProduct(meat2);
-
 
             cashRegister.Checkout(cart);
             Console.WriteLine(cart);
+            cashRegister.AmountMoney();
 
         }
     }

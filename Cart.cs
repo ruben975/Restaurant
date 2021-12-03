@@ -12,7 +12,7 @@ namespace Restaurant
 {
     public class Cart : List<Product>
     {
-        public int Money { get; set; } = 0;
+        public double Money { get; set; } = 0;
 
         public List<Product> cart = new List<Product>();
 
@@ -106,8 +106,7 @@ namespace Restaurant
 
         public override string ToString()
         {
-            string result = "";
-             
+            string result;
             if (cart.Count == 0) result = "Cosul tau este gol";
             else
             result = $"In cosul tau este/sunt:\n";
