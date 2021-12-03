@@ -11,10 +11,11 @@ namespace Restaurant.Menu.Drinks
         public Water()
               : base(DrinkType.Water)
         {
+            Type = DrinkType.Water;
         }
         protected override void AddDescription()
         {
-            Description = "500ml";
+            Description = "300ml";
         }
 
         protected override void AddPrice()

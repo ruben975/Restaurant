@@ -14,7 +14,7 @@ namespace Restaurant.Menu.Drinks
 
         protected Drink(DrinkType type)
         {
-            this.VAT = 9;
+            this.VAT = 5;
             AddDescription();
             AddPrice();
         }
@@ -27,7 +27,7 @@ namespace Restaurant.Menu.Drinks
         protected abstract void AddPrice();
         public override string ToString()
         {
-            return $"{Type} ({Description} ) PRET: {Price} RON ";
+            return $"{Type} ({Description}) PRET: {Price} RON ";
         }
     }
 

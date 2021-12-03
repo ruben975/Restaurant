@@ -12,7 +12,7 @@ namespace Restaurant.Menu.Drinks
         public Lemonade()
               : base(DrinkType.Lemonade)
         {
-           
+            Type = DrinkType.Lemonade;
            
         }
         
@@ -25,7 +25,7 @@ namespace Restaurant.Menu.Drinks
 
         protected override void AddPrice()
         {
-            Price = 5; VAT = (Price * VAT) / 100;
+            Price = 10; VAT = (Price * VAT) / 100;
         }
     }
 }

@@ -18,9 +18,13 @@ namespace Restaurant
         { }
         public Cart addProduct(Product product)
         {
-            if (product.GetType().Name.Contains("Lemonade"))
+            if (product.GetType().Name.Contains("Lemonade") || product.GetType().Name.Contains("Fresh"))
             {
-                string path = @"C:\Users\nagyr\OneDrive\Desktop\Universitatea UEO\a-IngineriaSoftware\Project 1\Restaurant\Stock.txt";
+                string path = "";
+                if (product.GetType().Name.Contains("Lemonade"))
+                {  path = @"C:\Users\nagyr\OneDrive\Desktop\Universitatea UEO\a-IngineriaSoftware\Project 1\Restaurant\StockLimonada.txt"; }
+                else
+                {  path = @"C:\Users\nagyr\OneDrive\Desktop\Universitatea UEO\a-IngineriaSoftware\Project 1\Restaurant\StockFresh.txt"; }
                 string s;
                 int r = 0;
                 using (StreamReader sr = File.OpenText(path))
@@ -40,7 +44,7 @@ namespace Restaurant
                     }
                     cart.Add(product);
                 }
-                else Console.WriteLine();
+                else Console.WriteLine("Limonada nu putem sa facem :(");
                
             }
             else cart.Add(product);
@@ -57,7 +61,7 @@ namespace Restaurant
        
         public override string ToString()
         {
-            string result = $"You have in your cart:\n";
+            string result = $"In cosul tau este/sunt:\n";
             foreach (Product i in cart)
             {
                 if (i.GetType().FullName.Contains("Meat")) result += i.GetType().Name + "\n";

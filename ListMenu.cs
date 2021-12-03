@@ -7,8 +7,7 @@ using Restaurant.Menu.Pizza;
 using Restaurant.Menu.Sauce;
 using Restaurant.Menu.SideDish;
 using Restaurant.Menu.Meat;
-
-
+using System;
 
 namespace Restaurant
 {
@@ -16,7 +15,7 @@ namespace Restaurant
     {
         List<Product> menu = new List<Product>();
 
-
+        
 
         public List<Product>  GetMenu()
         {   //PIZZA
@@ -53,13 +52,21 @@ namespace Restaurant
             menu.Add(DesertFactory.MakeDesert(DesertType.IceCream));
             menu.Add(DesertFactory.MakeDesert(DesertType.LavaCake));
 
+            //DRINK
+            menu.Add(DrinkFactory.MakeDrink(DrinkType.Cola));
+            menu.Add(DrinkFactory.MakeDrink(DrinkType.Fresh));
+            menu.Add(DrinkFactory.MakeDrink(DrinkType.Lemonade));
+            menu.Add(DrinkFactory.MakeDrink(DrinkType.Water));
+
 
             return menu;
         }
 
-        public void GetClass()
+        public ListMenu ShowMenu()
         {
-         
+            GetMenu();
+            menu.ForEach(i => Console.Write("{0}\n\n", i));
+            return this;
         }
 
         public override string ToString()

@@ -12,21 +12,12 @@ namespace Restaurant.Menu.Drinks
         public Fresh()
               : base(DrinkType.Fresh)
         {
-            string path = @"C:\Users\nagyr\OneDrive\Desktop\Universitatea UEO\a-IngineriaSoftware\Project 1\Restaurant\Stock.txt";
-            using (StreamWriter sw = File.CreateText(path))
-            {
-                sw.WriteLine("1");
-            }
-            using (StreamReader sr = File.OpenText(path))
-            {
-                string s;
-                while ((s = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(s);
-                }
-            }
+            Type = DrinkType.Fresh;
 
         }
+
+
+
         protected override void AddDescription()
         {
             Description = "500ml";
@@ -34,7 +25,7 @@ namespace Restaurant.Menu.Drinks
 
         protected override void AddPrice()
         {
-            Price = 5; VAT = (Price * VAT) / 100;
+            Price = 10; VAT = (Price * VAT) / 100;
         }
     }
 }
