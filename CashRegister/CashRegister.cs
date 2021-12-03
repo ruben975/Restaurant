@@ -29,11 +29,15 @@ namespace Restaurant.CashRegister
         {
             PrintingBill(cart);
             cart.RemoveAll();
+            
         }
 
-        public void PrintDailyHistory()
+        public void PrintDailyHistory(string day)
         {
-            throw new NotImplementedException();
+
+            string text = System.IO.File.ReadAllText(@"C:\Users\nagyr\OneDrive\Desktop\Universitatea UEO\a-IngineriaSoftware\Project 1\Restaurant\"+day+".txt");
+            Console.WriteLine(text);
+
         }
 
         public void PrintingBill(Cart cart)
@@ -74,7 +78,7 @@ namespace Restaurant.CashRegister
             Money += totalMoney;
             Console.WriteLine(bill);
 
-
+            //Amount of money in cashregister
             string path;
             path = @"C:\Users\nagyr\OneDrive\Desktop\Universitatea UEO\a-IngineriaSoftware\Project 1\Restaurant\CashRegisterMoney.txt";
         
@@ -96,6 +100,31 @@ namespace Restaurant.CashRegister
             Money = Money + r;
 
 
+            //For Printing Daily Bill
+            DateTime date = DateTime.Now;
+            string today = date.ToString("M");
+            bool exists = false;
+            path = @"C:\Users\nagyr\OneDrive\Desktop\Universitatea UEO\a-IngineriaSoftware\Project 1\Restaurant\" + today + ".txt";
+            if (File.Exists(path)) exists = true;
+            else
+            
+            {
+                using (FileStream fs = File.Create(path))
+                {
+
+
+                }
+            }
+
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                if (exists == true)
+                    sw.WriteLine("------------------------------");
+                else
+                    sw.WriteLine("------"+today + " history"+"------");
+                sw.WriteLine(bill);
+                
+            }
 
 
 

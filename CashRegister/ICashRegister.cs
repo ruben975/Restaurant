@@ -12,7 +12,7 @@ namespace Restaurant.CashRegister
     {
         public abstract void Checkout(Cart cart);
         public abstract void PrintingBill(Cart cart);
-        public abstract void PrintDailyHistory();
+        public abstract void PrintDailyHistory(string day);
         public abstract void AmountMoney();
 
     }
