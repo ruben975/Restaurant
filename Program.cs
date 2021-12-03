@@ -9,6 +9,7 @@ using Restaurant.Menu.SideDish;
 using System.Collections.Generic;
 using Restaurant;
 using System.IO;
+using Restaurant.CashRegister;
 namespace Restaurant
 {
     class Program
@@ -20,7 +21,7 @@ namespace Restaurant
             /*  Product pizza = PastaFactory.MakePasta(PastaType.Carbonara);
              Product pizz = PizzaFactory.MakePizza(PizzaType.Margherita);
              Product meat = MeatFactory.MakeMeat(MeatType.Hamburger);
-             Product meat1 = MeatFactory.MakeMeat(MeatType.Hamburger);
+            
              Product pasta = PastaFactory.MakePasta(PastaType.Gnochi);
              Console.WriteLine(pizza.Price);
 
@@ -38,17 +39,31 @@ namespace Restaurant
 
 
 
-              */
+              
 
              ListMenu menu = ListMenu.GetInstance();
-            menu.ShowMenu();
+           menu.ShowMenu(); */
 
+            CashRegister.CashRegister cashRegister = new CashRegister.CashRegister();
+
+            Product meat1 = MeatFactory.MakeMeat(MeatType.Hamburger);
+            Product meat2 = MeatFactory.MakeMeat(MeatType.Steak);
             Product pasta = PastaFactory.MakePasta(PastaType.Gnochi);
             Product prod = DrinkFactory.MakeDrink(DrinkType.Cola);
             Cart cart = new Cart();
             cart.addProduct(prod);
             cart.addProduct(pasta);
-            Console.WriteLine(prod.VAT);
+            cart.addProduct(pasta);
+            
+            cart.addProduct(prod);
+            cart.addProduct(prod);
+            cart.addProduct(meat1);
+            cart.addProduct(meat2);
+
+
+            cashRegister.Checkout(cart);
+            Console.WriteLine(cart);
+
         }
     }
 }

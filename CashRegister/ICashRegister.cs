@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Restaurant.Menu.Desert;
 
+
 namespace Restaurant.CashRegister
 {
    public interface ICashRegister
     {
-        public abstract void Checkout();
-        public abstract void PrintingBill();
+        public abstract void Checkout(Cart cart);
+        public abstract void PrintingBill(Cart cart);
         public abstract void PrintDailyHistory();
         public abstract void AmountMoney();
 
